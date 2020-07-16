@@ -214,6 +214,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1348988764}
   - component: {fileID: 1348988765}
+  - component: {fileID: 1348988766}
+  - component: {fileID: 1348988767}
+  - component: {fileID: 1348988769}
+  - component: {fileID: 1348988768}
   m_Layer: 0
   m_Name: StateMachine
   m_TagString: Untagged
@@ -247,7 +251,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8708c6c07d43f384fba2097bed8f97fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentState: {fileID: 11400000, guid: 8e79a579b1cb3b5458864be82867a81a, type: 2}
-  states:
-  - {fileID: 11400000, guid: 8e79a579b1cb3b5458864be82867a81a, type: 2}
-  - {fileID: 11400000, guid: dc745e0e553ab354f88d125e3fc7bad2, type: 2}
+  initialState: {fileID: 1348988766}
+--- !u!114 &1348988766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348988763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba1fc3595c49cc46a12bf8b4901232c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: StateA
+  transitions:
+  - destinationState: {fileID: 1348988767}
+    stateChangeEvent: {fileID: 11400000, guid: 6ed58c51a69ef064aa786e973bf0bfb4, type: 2}
+  OnEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdateAction: {fileID: 1348988769}
+--- !u!114 &1348988767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348988763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba1fc3595c49cc46a12bf8b4901232c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: StateB
+  transitions:
+  - destinationState: {fileID: 1348988766}
+    stateChangeEvent: {fileID: 11400000, guid: 2ad4e7e3443274f46b26f7574020ae37, type: 2}
+  OnEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdateAction: {fileID: 1348988768}
+--- !u!114 &1348988768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348988763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a04c36d8eb42f419e7381524019f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugString: StateB
+--- !u!114 &1348988769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348988763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a04c36d8eb42f419e7381524019f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugString: StateA

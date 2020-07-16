@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using ScriptableObjectArchitecture;
 
-namespace ink.ScriptableStateMachine
+namespace ink.StateMachine
 {
-    [CreateAssetMenu(fileName = "Transition", menuName = "ScriptableStateMachine/Transition", order = 1)]
-    public class Transition : ScriptableObject, IGameEventListener
+    [System.Serializable]
+    public class Transition : IGameEventListener
     {
         public State destinationState;
         public GameEventBase stateChangeEvent;
-
         private StateMachine _stateMachine;
 
         public virtual void Init(StateMachine stateMachine)

@@ -1,22 +1,25 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace ink.ScriptableStateMachine
+namespace ink.StateMachine
 {
     public class StateMachine : MonoBehaviour
     {
-        public State _currentState;
-        public List<State> states;
+        public State initialState;
+
+        private State _currentState;
+        private State[] _states;
 
         private void Awake()
         {
-            _currentState.Init(this);
+            _states = GetComponents<State>();
 
-            foreach (State state in states)
+            foreach (State state in _states)
             {
                 state.Init(this);
             }
-        }    
+
+            SetState(initialState);
+        }
 
         public void SetState(State state)
         {

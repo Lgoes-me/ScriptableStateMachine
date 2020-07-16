@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 
-namespace ink.ScriptableStateMachine
+namespace ink.StateMachine
 {
-    //[CreateAssetMenu(fileName = "Action", menuName = "ScriptableStateMachine/Action", order = 1)]
-    public abstract class Action : ScriptableObject
+    public abstract class Action : MonoBehaviour
     {
-        public abstract void DoAction(StateMachine stateMachine);
+        public abstract void DoAction();
     }
 }

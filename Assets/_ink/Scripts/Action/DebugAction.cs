@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using ink.ScriptableStateMachine;
+using ink.StateMachine;
 
-[CreateAssetMenu(fileName = "DebugAction", menuName = "ScriptableStateMachine/Action/DebugAction", order = 1)]
 public class DebugAction : Action
 {
     public string debugString;
 
-    public override void DoAction(StateMachine stateMachine)
+    public override void DoAction()
     {
         Debug.Log(debugString);
     }

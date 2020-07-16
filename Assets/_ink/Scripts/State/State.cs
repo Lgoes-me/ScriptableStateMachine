@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ink.ScriptableStateMachine
+namespace ink.StateMachine
 {
-    [CreateAssetMenu(fileName = "State", menuName = "ScriptableStateMachine/State", order = 1)]
-    public class State : ScriptableObject
+    public class State : MonoBehaviour
     {
+        public string stateName;
         public List<Transition> transitions;
 
         public UnityEvent OnEnterEvent, OnExitEvent;
@@ -18,7 +18,7 @@ namespace ink.ScriptableStateMachine
         {
             _stateMachine = stateMachine;
 
-            foreach(Transition transition in transitions)
+            foreach (Transition transition in transitions)
             {
                 transition.Init(stateMachine);
             }
@@ -31,7 +31,7 @@ namespace ink.ScriptableStateMachine
 
         public virtual void OnUpdate()
         {
-            OnUpdateAction?.DoAction(_stateMachine);
+            OnUpdateAction?.DoAction();
         }
 
         public virtual void OnExit()
