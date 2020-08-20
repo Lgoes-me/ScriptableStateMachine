@@ -38,5 +38,13 @@ namespace ink.StateMachine
         {
             OnExitEvent.Invoke();
         }
+
+        private void OnDestroy()
+        {
+            foreach (Transition transition in transitions)
+            {
+                transition.Destroy();
+            }
+        }
     }
 }

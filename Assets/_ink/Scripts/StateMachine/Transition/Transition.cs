@@ -20,5 +20,10 @@ namespace ink.StateMachine
         {
             _stateMachine?.SetState(destinationState);
         }
+
+        public virtual void Destroy()
+        {
+            stateChangeEvent.RemoveListener(this);
+        }
     }
 }
